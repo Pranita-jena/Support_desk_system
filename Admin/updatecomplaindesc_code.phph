@@ -1,0 +1,10 @@
+<?php
+include "connectionstring.php" ;
+$conn->beginTransaction();
+$query="update  complain_description_details set complain_id=?,complain_desc=? where complain_desc_id=?";
+$res=$conn->prepare($query);
+$data=array(
+        $_POST['complaindescription'],
+        $_POST['complaintype'],
+        $_POST['complaindescid']
+        );
